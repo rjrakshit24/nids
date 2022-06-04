@@ -198,7 +198,6 @@ def main():
     attackDB = AttackDB(attackSignatures)
     
     sniff(offline=packetSniffFile, store=False, quiet=True, prn=lambda x: processPackets(attackDB,x))
-    #sniff store=False
-#1.63G
+
 if __name__ == "__main__":
     main()
