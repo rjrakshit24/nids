@@ -14,7 +14,7 @@ signatures = [
   "pwned_[a-zA-Z_]+_grade"
 ]
 ```
-The NIDS support:
+The NIDS features:
 
 - IPv4 and TCP checksum verification failing to which packets are dropped silently
 - Custom TCP stream reassembly implementing a *first-received* policy for overlapping segments
@@ -50,6 +50,7 @@ To build and run this project, you need [docker installed](https://docs.docker.c
 Once docker is installed, clone the repository, and follow these steps:
 
 1. Build the docker image - `docker build --pull --rm -f "nids/Dockerfile" -t <image_name>:latest "nids"`
-2. Run the docker image - `docker run -it -v $(pwd):/data <image_name}> /data/<database_filename> /data/<pcap_filename>`
+2. Run the docker image - `docker run -it -m 256m -v $(pwd):/data <image_name}> /data/<database_filename> /data/<pcap_filename>`
   - `-v $(pwd):/data` : mounts the current working directory to the container as `/data`. `$(pwd)` can be replaced by the directory path where database files and pcap files are stored.
   - `/data/<database_filename>`, `/data/<pcap_filename>` : Path for signature db file and pcap file may vary according to the directory structure maintained.
+  - `-m` : sets the memory bound for the docker container
