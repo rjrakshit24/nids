@@ -3,7 +3,7 @@
 This project was a part of a submission to the cybersecurity course CY6740 Network Security. The goal of the project was to develop a Network Intrusion Detection System and gain insight into dealing with IDS evasion techniques.
 
 ### Specification
----
+
 This Network Intrusion Detection System processes PCAP Files to detect attack using a signature database provided in TOML format. Each signatures in the file are regular expression over byte strings and are matched against IP datagram payloads and TCP streams.
 
 Following is the structure of the TOML Signature Database file:
@@ -22,7 +22,7 @@ The NIDS support:
 - Bounded memory use during execution to prevent DoS attacks using Buffer Trimming
 
 ### Logging Detection
----
+
 Detections are printed to stdout as individual JSON objects, one per line. 
 
 The format of a single detection is as follows.
@@ -44,7 +44,7 @@ The format of a single detection is as follows.
 Note: The output is pretty printed for explanatorty purpose the actual output will be single lined
 
 ### Build and Run
----
+
 To build and run this project, you need [docker installed](https://docs.docker.com/engine/install/) on your machine.
 
 Once docker is installed, clone the repository, and follow these steps:
